@@ -1,44 +1,28 @@
-import React from 'react'
-import { gsap } from "gsap"
-import {ScrollTrigger,SplitText} from "gsap/all"
-import Lenis from 'lenis';
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Cocktails from './components/Cocktails';
-import About from './components/About';
-import Art from './components/Art';
-import Menu from './components/Menu';
-import Contact from './components/Contact';
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import Cocktails from "./components/Cocktails.jsx";
+import About from "./components/About.jsx";
+import Art from "./components/Art.jsx";
+import Menu from "./components/Menu.jsx";
+import Contact from "./components/Contact.jsx";
 
-gsap.registerPlugin(ScrollTrigger,SplitText);
-
-const lenis = new Lenis({
-  duration: 1.2,
-  smooth: true,
-  smoothTouch: false
-});
-
-lenis.on("scroll", ScrollTrigger.update);
-
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
-
-gsap.ticker.lagSmoothing(0);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
-  return (
-    <main>
-      <Navbar />
-      <Hero />
-      <Cocktails />
-      <About />
-      <Art />
-      <Menu />
-      <Contact />
-    </main>
-  )
-}
+    return (
+        <main>
+            <Navbar />
+            <Hero />
+            <Cocktails />
+            <About />
+            <Art />
+            <Menu />
+            <Contact />
+        </main>
+    );
+};
 
-export default App
+export default App;
